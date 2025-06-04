@@ -1,14 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 import data from "../data.json";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Body = () => {
   const [islightmode, setIslightmode] = useState(true);
+  const navigate = useNavigate();
 
   const toggleClasses = () => {
     setIslightmode(!islightmode);
   };
+
+  const handleFlagClick = (countryName) => {
+    navigate(`/flag/${countryName}`);
+  };
+
   return (
     <div className={islightmode ? "lightmode" : "darkmode"}>
       <header id="header">
@@ -16,12 +23,10 @@ const Body = () => {
           <h1>Where in the world?</h1>
         </div>
         <div>
-          <div>
-            <button onClick={toggleClasses} className="toggle-button">
-              <i className={islightmode ? "fas fa-moon" : "fas fa-sun"}></i>
-              {islightmode ? " darkmode" : "lightmode"}
-            </button>
-          </div>
+          <button onClick={toggleClasses} className="toggle-button">
+            <i className={islightmode ? "fas fa-moon" : "fas fa-sun"}></i>
+            {islightmode ? " darkmode" : " lightmode"}
+          </button>
         </div>
       </header>
       <div className="nested-container">
@@ -50,7 +55,7 @@ const Body = () => {
           <div>
             <div className="country-list">
               {data.map((country, index) => (
-                <div key={index}>
+                <div key={index} onClick={() => handleFlagClick(country.name)}>
                   <div className="country-card">
                     <div className="imgdiv">
                       <img

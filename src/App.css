@@ -1,17 +1,120 @@
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: hsl(200, 15%, 8%);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#header, .filter-div {
+#header,
+.filter-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+#header {
+  padding: 5vw 5vw;
+  background-color: hsla(0, 0%, 1%, 0.205);
 
+  @media (max-width: 768px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 375px) {
+    padding: 2vw;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 1vw 10vw;
+  }
+}
+#header div h1 {
+  font-size: 1.5vw;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 5vw;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 3vw;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1.5vw;
+  }
+}
+
+.filter-div {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  padding: 3vw 5vw;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: start;
+  }
+  @media (max-width: 375px) {
+    padding: 2vw;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 3vw 10vw;
+  }
+}
+.filter-div form {
+  margin-top: 5vw;
+  width: 100%;
+}
+.size {
+  width: 100%;
+  padding: 0.9vw;
+  border: 1px solid #6b69698f;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+
+  @media (max-width: 375px) {
+    font-size: 0.875rem;
+  }
+}
+.search-form input {
+  width: auto;
+  background-color: transparent;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 10vw;
+  }
+}
+.filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    justify-content: start;
+    align-items: center;
+  }
+}
+.filter-form select {
+  background-color: transparent;
+
+  width: auto;
+  @media (max-width: 768px) {
+    width: 50%;
+    height: 10vw;
+  }
+}
+.filter-select option {
+  color: rgb(29, 84, 133);
+  background-color: aquamarine;
+}
 .country-list {
   display: flex;
   flex-wrap: wrap;
@@ -37,56 +140,41 @@ body {
   transition: transform 0.2s;
   margin-bottom: 2vw;
 
-
   @media (max-width: 768px) {
-    margin: 1vw;
-    padding: 2vw;
-    box-sizing: border-box;
-    flex-grow: unset;
-    flex-basis: unset;
-    flex-shrink: unset;
-    max-width: unset;
-    min-width: unset;
-    height: unset;
-    max-height: unset;
-    min-height: unset;
-    overflow-y: unset;
-    overflow-x: unset;
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
     white-space: normal;
-
-   
-  }
-
-  @media (max-width: 375px) {
-    width: calc(100% - 4vw);
-    margin-bottom: calc(2vw + (1rem * var(--vh)));
-    padding-bottom: calc(2vw + (1rem * var(--vh)));
-    
-  
   }
 }
-.imgdiv{
+.imgdiv {
   display: flex;
   margin: 0;
   padding: 0;
 }
 .img {
- width: 350px;
- height: 250px;
- padding: 0;
- margin: 0;
- border-radius: 8px 8px 0 0; 
+  width: 350px;
+  height: 250px;
+  padding: 0;
+  margin: 0;
+  border-radius: 8px 8px 0 0;
 }
-.country-info{
+.country-info {
   padding: 1vw;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
+  @media (max-width: 768px) {
+    padding: 5vw;
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    line-height: 6vw;
+  }
 }
 .country-info h2 {
   display: flex;
@@ -94,11 +182,10 @@ body {
   word-wrap: break-word;
   font-size: 0.9vw;
   margin: 0;
-   @media (max-width: 768px) {
-    
+  @media (max-width: 768px) {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-
+    padding-bottom: 2vw;
   }
 
   @media (max-width: 375px) {
@@ -113,72 +200,28 @@ body {
 .country-info p {
   margin: 0.5vw 0;
 }
-#header {
-  padding: 1vw 5vw;
-  background-color: hsla(0, 0%, 1%, 0.205);
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  @media (max-width: 375px) {
-    padding: 2vw;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 1vw 10vw;
-  }
-}
-
-.filter-div {
-  padding: 3vw 5vw;
-
-  @media (max-width: 375px) {
-    padding: 2vw;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 3vw 10vw;
-  }
-}
-
-.size {
-  width: 100%;
-  padding: 0.5vw;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  background-color: hsl(0, 0%, 99%);
-  color: hsl(200, 15%, 8%);
-
-  @media (max-width: 375px) {
-    font-size: 0.875rem;
-  }
-}
-.body-container{
-background-color: aqua;
+.body-container {
+  background-color: aqua;
 }
 .lightmode {
-    background-color: rgb(233, 243, 247);
-    color: black;
+  background-color: rgb(233, 243, 247);
+  color: black;
 }
 
 .darkmode {
-    background-color: rgba(15, 7, 7, 0.856);
-    color: white;
+  background-color: rgba(15, 7, 7, 0.856);
+  color: white;
 }
 .toggle-button {
-   
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: hsl(200, 15%, 8%);
-    color: white;
-    font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: hsl(200, 15%, 8%);
+  color: white;
+  font-size: 1rem;
 }
-.toggle-button i{
-    margin-right: 0.5rem;
+.toggle-button i {
+  margin-right: 0.5rem;
 }

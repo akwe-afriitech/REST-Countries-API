@@ -1,13 +1,18 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Body from './components/body'; 
+import FlagDetails from './components/flags'; 
 
-import './App.css';
-import Body from './components/body';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <Body />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Body />} />
+        <Route path="/flag/:name" element={<FlagDetails />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
